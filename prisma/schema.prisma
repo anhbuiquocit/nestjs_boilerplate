@@ -6,8 +6,13 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+enum Role_Type {
+  USER
+  ADMIN
 }
 
 model User {
@@ -15,6 +20,7 @@ model User {
   createdAt DateTime  @default(now())
   updatedAt DateTime?
   deletedAt DateTime?
-  email     String
+  email     String    @unique
   password  String
+  roles     String
 }

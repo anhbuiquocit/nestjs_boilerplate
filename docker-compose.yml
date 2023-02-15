@@ -9,7 +9,7 @@ services:
     image: mysql:5.7
     restart: always
     ports:
-      - 3370:3306
+      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: wMT9ABAAmyrju3wF
       MYSQL_DATABASE: main
